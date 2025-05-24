@@ -4,7 +4,7 @@ export interface UserProps {
   id?: number;
   email: string;
   username: string;
-  password?: string;
+  password: string;
   role: Role;
   createdAt?: Date;
   updatedAt?: Date;
@@ -15,7 +15,7 @@ export class User {
   private _id: number;
   private _email: string;
   private _username: string;
-  private _password?: string;
+  private _password: string;
   private _role: Role;
   private _createdAt?: Date;
   private _updatedAt?: Date;
@@ -42,7 +42,7 @@ export class User {
   get username(): string {
     return this._username;
   }
-  get password(): string | undefined {
+  get password(): string {
     return this._password;
   }
   get role(): Role {
