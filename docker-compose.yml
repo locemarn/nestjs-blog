@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  database:
+    image: postgres:16-alpine
+    container_name: nestjs-blog-db
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: ${DATABASE_USER:-postgres}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD:-docker}
+      POSTGRES_DB: ${DATABASE_NAME:-nestjs_blog_db}
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:
